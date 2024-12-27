@@ -4,38 +4,90 @@
     <title>EMPLOYEES BURNOUT PRDICTION</title>
     <link rel="stylesheet" href ='static/styles.css'>
 </head>
+<style>
+    body{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ghostwhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .Parent_container{
+        margin-top: 3%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px 60px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    form > div{
+        display: grid;
+        grid-template-columns: .4fr 1fr;
+    }
+    label{
+        font-size: 14px;
+        color: #333;
+    }
+    input, select{
+        padding: 6px 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .button-green{
+        background-color: rgb(92, 92, 187);
+        border: none;
+        padding: 10px 15px;
+        color: white; text-align: center;
+        cursor: pointer;
+    }
+</style>
 <body>
-    <h3>EMPLOYEES BURNOUT PREDICTION</h3>
+    <div class="Parent_container">
+    <h3 style="font-size: 20px; text-align: center; color: rgb(73, 73, 199); text-shadow: 2px 1px rgb(92, 92, 187);">EMPLOYEES BURNOUT PREDICTION</h3>
 
         <form  action="/predict"  method="post">
-            <label for="designation">Designation:</label>
-            <input type="number" id="designation" name="designation" step="0.01" required><br><br>
-
-            <label for="resource_allocation">Resource Allocation:</label>
-            <input type="number" id="resource_allocation" name="resource_allocation" step="0.01" required><br><br>
-
-            <label for="mental_fatigue_score">Mental Fatigue Score:</label>
-            <input type="number" id="mental_fatigue_score" name="mental_fatigue_score" step="0.01" required><br><br>
-
-            <label for="company_type">Company Type:</label>
-            <select name="company_type" id="company_type">
-                <option value="Service">Service</option>
-                <option value="Product">Product</option>
-            </select><br><br>
-
-            <label for="wfh_setup_available">WFH Setup Available:</label>
-            <select name="wfh_setup_available" id="wfh_setup_available">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select><br><br>
-
-            <label for="gender">Gender:</label>
-            <select name="gender" id="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select><br><br>
-            <input type="submit" value="Predict" class="button-green" >
+            <div>
+                <label for="designation">Designation:</label>
+                <input type="number" id="designation" name="designation" step="0.01" required><br><br>
+            </div>
+            <div>
+                <label for="resource_allocation">Resource Allocation:</label>
+                <input type="number" id="resource_allocation" name="resource_allocation" step="0.01" required><br><br>
+            </div>
+            <div>
+                <label for="mental_fatigue_score">Mental Fatigue Score:</label>
+                <input type="number" id="mental_fatigue_score" name="mental_fatigue_score" step="0.01" required><br><br>
+            </div>
+            <div>
+                <label for="company_type">Company Type:</label>
+                <select name="company_type" id="company_type">
+                    <option value="Service">Service</option>
+                    <option value="Product">Product</option>
+                </select><br><br>
+            </div>
+            <div>
+                <label for="wfh_setup_available">WFH Setup Available:</label>
+                <select name="wfh_setup_available" id="wfh_setup_available">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+            </div>
+            
+            <div>
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br><br>
+            </div>
+            
+            
         </form>
+      <div class="btn">  <input type="submit" value="Predict" class="button-green" ><br></div>
 
         {% if prediction %}
         <h1 align="center"> <span style="color: green;">Burnout Rate:</span> <span style="color: red;">{{ prediction }}</span></h1>
@@ -45,9 +97,10 @@
             <div class="centered-container">
                 <a href="https://github.com/Sita2000/Employee_Burnout_Analysis" >Click to get Source Code</a>
             </div>
-
+        </div>
 </body>
 </html>
+
 
 
 

@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-color: skyblue;
   }
+  
   h3 { 
   color: blue; /* Change the font color to red */
   text-align: center; /* Align the text to the center */
@@ -22,18 +23,14 @@ body {
   
   }
   
-  .button-green {
-  background-color: lightblue ;
-  }
+ 
   form {
     margin: 0 auto; /* Center align the form */
     text-align: center; /* Center align form elements within the form */
     width: 400px; /* Adjust the width as per your requirement */
   }
   
-  label {
-    font-weight: bold;
-  }
+ 
   a {
     text-decoration: none;
     color: purple; 
@@ -42,4 +39,9 @@ body {
   .centered-container {
   text-align: center;
   font-weight: bold;
+}
+
+
+.Parent_container{
+
 }
